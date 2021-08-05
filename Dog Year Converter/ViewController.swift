@@ -10,9 +10,31 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var txtFld: UITextField!
+    
+    @IBOutlet weak var btn: UIButton!
+    
+    @IBOutlet weak var ViewLbl: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        addUI()
+    }
+    
+    func addUI ()
+    {
+        ViewLbl.backgroundColor = 
+        txtFld.keyboardType = .numberPad
+    }
+    
+    @IBAction func btnPressed(_ sender: Any) {
+        let oldAge = Int(txtFld.text!)
+        var newAge = calculateAge(<#T##age: Int##Int#>(txtFld.text!)!)
+        ViewLbl.text = "\(String(describing: oldAge)) converted to dog years"
+    }
+    func calculateAge (_ age: Int) -> Int
+    {
+        return age*7
     }
 
     override func didReceiveMemoryWarning() {
